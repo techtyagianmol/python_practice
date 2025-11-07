@@ -14,6 +14,15 @@ class Car:
     def fuel_type(self):
         return "diesel or petrol fuel type"
 
+
+
+    # using @staticmethod decorator we can protect the property of the class and we have to cut off the wiring by removing self keyword from the property of the class
+    # by using decorator static the stance of the class cannot access the static property directly
+
+    @staticmethod
+    def general_description():
+        return "Cars are means of transport"
+
 class ElectricCar(Car):
     def __init__(self,brand,model,battery_size):
         super().__init__(brand,model)
@@ -32,7 +41,8 @@ print(my_tesla.fuel_type())
 safari = Car("tata","safari")
 safari3 = Car("tata","safari3")
 nexon = Car("tata","nexon")
-print(safari.fuel_type())
+print(my_tesla.general_description())
+print(Car.general_description())
 print(Car.total_car)
 
 
